@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="/images/thompson_logo.jpg">
+  <title>GTA Building Consult</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    let lastScroll = 0;
+  
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const body = document.body;
+  
+    if (currentScroll > lastScroll && currentScroll > 50) {
+      // Scrolling Down
+      body.classList.add('scrolled-down');
+      body.classList.remove('scrolled-up');
+    } else if (currentScroll < lastScroll) {
+      // Scrolling Up
+      body.classList.add('scrolled-up');
+      body.classList.remove('scrolled-down');
+    }
+  
+    lastScroll = currentScroll <= 0 ? 0 : currentScroll; // Ensure it doesn't go negative
+  });
+  
+  </script>
+  
+
+<script defer src="script.js"></script>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 0;
+  }
+
+  header img {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+  }
+
+  .testimonial-section {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .testimonial-card {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .testimonial-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+
+  .testimonial-card h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+  }
+
+  .testimonial-card p {
+    color: #666;
+  }
+
+  .review-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .review-form h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .review-form label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+  }
+
+  .review-form input, .review-form textarea, .review-form select, .review-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .review-form textarea {
+    resize: none;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: #333;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .submit-btn:hover {
+    background: #555;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="index.html" class="w3-bar-item w3-button"><b>GTA</b> BUILDING CONSULT</a>
+    <div class="w3-right">
+      <a href="index.html" class="w3-bar-item w3-button">Home</a>
+      <a href="projects.html" class="w3-bar-item w3-button">Projects</a>
+      <a href="about.html" class="w3-bar-item w3-button">About</a>
+      <a href="services.html" class="w3-bar-item w3-button">Services</a>
+      <a href="testimonials.html" class="w3-bar-item w3-button">Testimonials</a>
+      <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header Section -->
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width: 1500px;" id="home">
+  <img class="w3-image" src="/images/architect.jpg" alt="Architecture" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>GTA</b></span> <span class="w3-hide-small w3-text-light-grey">BUILDING CONSULT</span></h1>
+  </div>
+</header>
+
+<!-- Testimonials Section -->
+<div class="testimonial-section">
+  <h1 class="w3-xxlarge center-text"><b>What Our Clients Say</b></h1>
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16 center-text">Testimonials</h3>
+
+  <!-- Fixed Custom Reviews -->
+  <div class="testimonial-card">
+    <h4>Jane Doe (5 Stars)</h4>
+    <p>"GTA Building Consult exceeded our expectations. Professional, efficient, and delivered top-notch results!"</p>
+    <img src="/images/review1.jpg" alt="Review 1">
+  </div>
+
+  <div class="testimonial-card">
+    <h4>John Smith (4 Stars)</h4>
+    <p>"Great experience with GTA! They were responsive and thorough in all aspects of our project."</p>
+    <img src="/images/review2.jpg" alt="Review 2">
+  </div>
+
+  <!-- Dynamic Testimonials Display -->
+  <div id="testimonial-list"></div>
+
+  <!-- Review Submission Form -->
+  <form id="review-form" class="review-form">
+    <h3>Leave a Review</h3>
+
+    <label for="name">Your Name</label>
+    <input type="text" id="name" placeholder="Enter your name" required>
+
+    <label for="email">Your Email (optional)</label>
+    <input type="email" id="email" placeholder="Enter your email">
+
+    <label for="review">Your Review</label>
+    <textarea id="review" placeholder="Enter your review" required></textarea>
+
+    <label for="media">Attach Media (optional)</label>
+    <input type="file" id="media" accept="image/*,video/*">
+
+    <label for="rating">Rating</label>
+    <select id="rating" required>
+      <option value="">Select Rating</option>
+      <option value="5">5 - Excellent</option>
+      <option value="4">4 - Good</option>
+      <option value="3">3 - Average</option>
+      <option value="2">2 - Poor</option>
+      <option value="1">1 - Terrible</option>
+    </select>
+
+    <button type="submit" class="submit-btn">
+      Submit Review <i class="fa fa-paper-plane"></i>
+    </button>
+  </form>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="w3-row-padding">
+    <div class="w3-col l6 m6 s12">
+      
+      <h4>Contact Details</h4>
+      <p><i class="fa fa-map-marker w3-text-red"></i> 123 Main Street, Cityville</p>
+      <p><i class="fa fa-phone w3-text-red"></i> +233(0) 547 544 483</p>
+      <p><i class="fa fa-envelope w3-text-red"></i> gtabuildingconsult@gmail.com</p>
+      <h4>Business Hours</h4>
+      <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+      <p>Saturday: By Appointment</p>
+      <p>Sunday: Closed</p>
+      <a href="signup.html" onclick="document.getElementById('signupModal').style.display='block'" class="w3-bar-item w3-button">
+        <i class="fa fa-user-plus"></i> Signup
+      </a>
+      <a href="login.html" onclick="document.getElementById('loginModal').style.display='block'" class="w3-bar-item w3-button">
+        <i class="fa fa-sign-in"></i> Login
+      </a>
+    </div>
+    <div class="w3-col l6 m6 s12">
+      <h4>Follow Us on Social Media:</h4>
+      <div class="social-icons">
+        <a href="https://x.com/gta_building" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.instagram.com/gtabuildingconsult?igsh=MWhkY3F6MjI1MjZxcg==" target="_blank"><i class="fa fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+        <!-- Threads Custom SVG Icon -->
+        <a href="https://www.threads.net/@gtabuildingconsult?igshid=NTc4MTIwNjQ2YQ==" target="_blank" class="threads-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM16.95 12c-.3-1.35-1.08-2.5-2.5-2.5-1.67 0-2.5 1.12-2.5 2.5 0 1.57 1.08 2.5 2.5 2.5 1.14 0 1.93-.65 2.25-1.5h-1.6v-1h3.25c.05.25.1.5.1.75 0 2-1.57 3.75-3.75 3.75-2.25 0-4-1.82-4-4s1.82-4 4-4c1.32 0 2.34.6 3 1.5l-1.05.95z"></path>
+          </svg>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+  <p class="w3-border-bottom w3-border-light-grey w3-padding-16"></p>
+  <p>&copy; 2024 GTA BUILDING CONSULT</p>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", loadReviews);
+
+document.getElementById("review-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const review = document.getElementById("review").value;
+  const rating = document.getElementById("rating").value;
+  const media = document.getElementById("media").files[0];
+
+  const newReview = { name, email, review, rating, mediaURL: media ? URL.createObjectURL(media) : null };
+
+  saveReview(newReview);
+  loadReviews();
+  document.getElementById("review-form").reset();
+  alert("Thank you for your review!");
+});
+
+function saveReview(review) {
+  let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+  reviews.push(review);
+  localStorage.setItem("reviews", JSON.stringify(reviews));
+}
+
+function loadReviews() {
+  const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+  const testimonialList = document.getElementById("testimonial-list");
+  testimonialList.innerHTML = "";
+
+  reviews.forEach(({ name, review, rating, mediaURL }) => {
+    const card = document.createElement("div");
+    card.className = "testimonial-card";
+    card.innerHTML = `
+      <h4>${name} (${rating} Stars)</h4>
+      <p>${review}</p>
+      ${mediaURL ? `<img src="${mediaURL}" alt="Media Attachment">` : ""}
+    `;
+    testimonialList.prepend(card);
+  });
+}
+
+<!-- Logout Logic -->
+function logout() {
+  localStorage.removeItem("loggedInUser");
+  alert("Logged out successfully!");
+  window.location.href = "login.html";
+}
+
+function deleteReview(reviewId) {
+  const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+  if (!loggedInUser || loggedInUser.role !== "admin") {
+    alert("You are not authorized to delete reviews.");
+    return;
+  }
+
+  let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+  reviews = reviews.filter((review) => review.id !== reviewId);
+  localStorage.setItem("reviews", JSON.stringify(reviews));
+  alert("Review deleted successfully.");
+  window.location.reload();
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+/* Sticky Navbar Style */
+.w3-top {
+    position: sticky;
+    top: 0; /* Sticks at the top */
+    z-index: 1000; /* Ensures it stays above other content */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth hiding effect */
+  }
+  
+  /* Navbar Hiding on Scroll */
+  body.scrolled-down .w3-top {
+    transform: translateY(-100%); /* Moves the navbar out of view */
+  }
+  
+  /* Navbar Background Change */
+  body.scrolled-up .w3-top {
+    transform: translateY(0); /* Brings the navbar back into view */
+  }
+  
+
+/* Fix for navbar overlap */
+body {
+    padding-top: 70px; /* Adjust this value based on navbar height */
+  }
+  
+  .w3-top {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .w3-content {
+    font-size: medium;
+  }
+  
+  .w3-button {
+    font-size: small;
+  }
+
+  .logo-img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Footer Styles */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  /* Social Icons Container */
+  .social-icons {
+    margin-top: 10px;
+  }
+  
+  .social-icons a {
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    background: #555;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover Effects */
+  .social-icons a:hover {
+    background: #fff;
+    color: #333;
+    transform: scale(1.1);
+  }
+  
+  /* Custom Threads Icon Styles */
+  .social-icons .threads-icon svg {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+  }
+  
+
+  /* Auth Page Styles */
+.auth-container {
+    width: 400px;
+    margin: 5% auto;
+    padding: 2em;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .auth-container h2 {
+    margin-bottom: 1em;
+    color: #333;
+  }
+  
+  .auth-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .auth-container label {
+    text-align: left;
+    margin-top: 1em;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .auth-container input, .auth-container select {
+    padding: 0.5em;
+    margin-top: 0.5em;
+    font-size: 16px;
+  }
+  
+  .auth-container .submit-btn {
+    padding: 0.7em;
+    margin-top: 1.5em;
+    background: #333;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+  }
+  
+  .auth-container .submit-btn:hover {
+    background: #555;
+  }
+  
+  .auth-container p {
+    margin-top: 1em;
+  }
+  
+  .auth-container a {
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .auth-container a:hover {
+    text-decoration: underline;
+  }
+  
+/* Modal Background */
+.w3-modal {
+    display: none;
+    padding-top: 100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+  }
+  
+  /* Modal Content Animation */
+  .w3-animate-zoom {
+    animation: zoom 0.3s ease-in-out;
+  }
+  
+  @keyframes zoom {
+    from {
+      transform: scale(0.7);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  
+  /* Modal Content */
+.w3-modal-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Mobile Device Styles */
+  @media only screen and (max-width: 600px) {
+    .w3-modal-content {
+      width: 90%;  /* Take up 90% of the screen width */
+      padding: 20px 10px; /* Add padding on the sides for small devices */
+    }
+  
+    /* Center the modal header text for small screens */
+    .w3-modal header {
+      text-align: center;
+    }
+  
+    /* Adjust the button for smaller screens */
+    .w3-button {
+      padding: 15px;
+      width: 100%;
+    }
+  }
+  
+  /* Adjusting form elements for smaller screens */
+  @media only screen and (max-width: 600px) {
+    .w3-input {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  

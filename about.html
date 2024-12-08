@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" type="image/x-icon" href="/images/thompson_logo.jpg">
+  <title>GTA Building Consult</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    let lastScroll = 0;
+  
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const body = document.body;
+  
+    if (currentScroll > lastScroll && currentScroll > 50) {
+      // Scrolling Down
+      body.classList.add('scrolled-down');
+      body.classList.remove('scrolled-up');
+    } else if (currentScroll < lastScroll) {
+      // Scrolling Up
+      body.classList.add('scrolled-up');
+      body.classList.remove('scrolled-down');
+    }
+  
+    lastScroll = currentScroll <= 0 ? 0 : currentScroll; // Ensure it doesn't go negative
+  });
+  
+  </script>
+  
+
+</head>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="index.html" class="w3-bar-item w3-button"><b>GTA</b> BUILDING CONSULT</a>
+    <div class="w3-right">
+      <a href="index.html" class="w3-bar-item w3-button">Home</a>
+      <a href="projects.html" class="w3-bar-item w3-button">Projects</a>
+      <a href="about.html" class="w3-bar-item w3-button">About</a>
+      <a href="services.html" class="w3-bar-item w3-button">Services</a>
+      <a href="testimonials.html" class="w3-bar-item w3-button">Testimonials</a>
+      <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
+    </div>
+  </div>
+</div>
+
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;">
+  <img class="w3-image" src="/images/about-header.jpg" alt="About" width="1500" height="800">
+  <div class="w3-display-middle w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><b>About Us</b></h1>
+  </div>
+</header>
+
+<div class="w3-content w3-padding" style="max-width:1564px">
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Who We Are</h3>
+  <p>
+    At GTA Building Consult, we are committed to transforming visions into reality. As a leading architecture and construction consulting firm, we specialize in providing expert advice and project management services to clients across a variety of industries. Whether you’re building a dream home, a commercial space, or embarking on a large-scale development, our team of experienced professionals ensures your project is executed flawlessly from start to finish.
+  </p>
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Our Mission</h3>
+  <p>
+    Our mission is to deliver innovative and sustainable building solutions that meet the needs of our clients. We focus on quality, efficiency, and cost-effectiveness, ensuring that every project exceeds expectations while adhering to the highest industry standards. At GTA Building Consult, we believe in building strong relationships with our clients and working collaboratively to bring their ideas to life.
+  </p>
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Our Values</h3>
+  <p>
+Integrity, excellence, and commitment are the core values that define GTA Building Consult. We pride ourselves on our attention to detail, transparency in communication, and dedication to customer satisfaction. We approach each project with passion and purpose, ensuring that every phase of the build is executed with precision and care.
+  </p>
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">What Sets Us Apart</h3>
+  <p>
+    What sets us apart is our client-focused approach. We don’t just provide advice—we partner with you throughout the entire process. From the initial concept through to project completion, our team of architects, engineers, and project managers work together to ensure that every aspect of your project is handled professionally and efficiently.
+  </p>
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Our Team</h3>
+  <p>
+    Our team consists of highly skilled architects, project managers, and construction experts who bring years of experience and knowledge to every project. We are passionate about creating spaces that inspire, and we take pride in providing custom solutions that are tailored to your specific needs. Our collaborative approach ensures that every project is a success.
+  </p>
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Sustainability and Innovation</h3>
+  <p>
+    We are dedicated to incorporating sustainable practices into every project. At GTA Building Consult, we understand the importance of environmental responsibility, which is why we prioritize energy-efficient solutions, sustainable materials, and environmentally friendly practices. We also embrace innovation in design and construction, ensuring that we stay ahead of industry trends and deliver cutting-edge solutions to our clients.
+  </p>
+  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact Us</h3>
+  <p>
+    Ready to start your next project? Get in touch with us today and let’s discuss how GTA Building Consult can help turn your vision into reality. Whether you’re looking for expert advice or full-scale project management, we are here to guide you every step of the way.
+  </p>
+  <a href="contact.html">
+    <button class="w3-button w3-black w3-margin-bottom" type="submit">
+      <i class="fa fa-paper-plane"></i> Send Us A Message </button></a>
+</div>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="w3-row-padding">
+    <div class="w3-col l6 m6 s12">
+      
+      <h4>Contact Details</h4>
+      <p><i class="fa fa-map-marker w3-text-red"></i> 123 Main Street, Cityville</p>
+      <p><i class="fa fa-phone w3-text-red"></i> +233(0) 547 544 483</p>
+      <p><i class="fa fa-envelope w3-text-red"></i> gtabuildingconsult@gmail.com</p>
+      <h4>Business Hours</h4>
+      <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+      <p>Saturday: By Appointment</p>
+      <p>Sunday: Closed</p>
+      <a href="signup.html" onclick="document.getElementById('signupModal').style.display='block'" class="w3-bar-item w3-button">
+        <i class="fa fa-user-plus"></i> Signup
+      </a>
+      <a href="login.html" onclick="document.getElementById('loginModal').style.display='block'" class="w3-bar-item w3-button">
+        <i class="fa fa-sign-in"></i> Login
+      </a>
+    </div>
+    <div class="w3-col l6 m6 s12">
+      <h4>Follow Us on Social Media:</h4>
+      <div class="social-icons">
+        <a href="https://x.com/gta_building" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.instagram.com/gtabuildingconsult?igsh=MWhkY3F6MjI1MjZxcg==" target="_blank"><i class="fa fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+        <!-- Threads Custom SVG Icon -->
+        <a href="https://www.threads.net/@gtabuildingconsult?igshid=NTc4MTIwNjQ2YQ==" target="_blank" class="threads-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM16.95 12c-.3-1.35-1.08-2.5-2.5-2.5-1.67 0-2.5 1.12-2.5 2.5 0 1.57 1.08 2.5 2.5 2.5 1.14 0 1.93-.65 2.25-1.5h-1.6v-1h3.25c.05.25.1.5.1.75 0 2-1.57 3.75-3.75 3.75-2.25 0-4-1.82-4-4s1.82-4 4-4c1.32 0 2.34.6 3 1.5l-1.05.95z"></path>
+          </svg>
+        </a>
+
+      </div>
+      
+    </div>
+  </div>
+  <p class="w3-border-bottom w3-border-light-grey w3-padding-16"></p>
+  <p>&copy; 2024 GTA BUILDING CONSULT</p>
+</footer>
+
+</body>
+</html>
+
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</body>
+</html>
