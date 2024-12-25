@@ -1,352 +1,317 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="icon" type="image/x-icon" href="/images/thompson_logo.jpg">
-<title>GTA Building Consult</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="/images/thompson_logo.jpg">
+  <title>GTA Building Consult</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="style.css">
 
-<script>
-  let lastScroll = 0;
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-window.addEventListener('scroll', () => {
-  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-  const body = document.body;
+  <script>
+    let lastScroll = 0;
 
-  if (currentScroll > lastScroll && currentScroll > 50) {
-    // Scrolling Down
-    body.classList.add('scrolled-down');
-    body.classList.remove('scrolled-up');
-  } else if (currentScroll < lastScroll) {
-    // Scrolling Up
-    body.classList.add('scrolled-up');
-    body.classList.remove('scrolled-down');
-  }
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      const body = document.body;
 
-  lastScroll = currentScroll <= 0 ? 0 : currentScroll; // Ensure it doesn't go negative
-});
+      if (currentScroll > lastScroll && currentScroll > 50) {
+        // Scrolling Down
+        body.classList.add('scrolled-down');
+        body.classList.remove('scrolled-up');
+      } else if (currentScroll < lastScroll) {
+        // Scrolling Up
+        body.classList.add('scrolled-up');
+        body.classList.remove('scrolled-down');
+      }
 
-</script>
+      lastScroll = currentScroll <= 0 ? 0 : currentScroll; // Ensure it doesn't go negative
+    });
+  </script>
 
-<style>
-  header img {
-  width: 100%;
-  height: 60vh;
-  object-fit: cover;
-}
-  .service-card {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-.service-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-.service-card:hover img {
-  transform: scale(1.1);
-}
-.service-info {
-  position: absolute;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  width: 100%;
-  padding: 20px;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-.service-info h4 {
-  margin: 0;
-  font-size: 20px;
-}
-.services-container {
-  display: grid;
-  margin: 50px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 10px;
-}
-.center-text {
-  text-align: center;
-  margin-top: 50px;
-}
+  <style>
+    header img {
+      width: 100%;
+      height: 60vh;
+      object-fit: cover;
+    }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  .services-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+    @media screen and (max-width: 768px) {
+      header img {
+        height: 50vh; /* Adjust height on smaller screens */
+      }
+    }
 
-@media screen and (max-width: 480px) {
-  .services-container {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
+    .w3-bar-item {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
 
+    body.scrolled-down .w3-bar {
+      background-color: #333; /* Darker background when scrolling down */
+    }
+
+    body.scrolled-up .w3-bar {
+      background-color: transparent; /* Transparent background when scrolling up */
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .service-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .service-card:hover img {
+      transform: scale(1.1);
+    }
+    .service-info {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .service-info h4 {
+      margin: 0;
+      font-size: 20px;
+    }
+    .services-container {
+      display: grid;
+      margin: 50px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 10px;
+    }
+    .center-text {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      .services-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .services-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
-
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <img class="logo-img" src="images/thompson_logo.jpg">
-    <a href="#home" class="w3-bar-item w3-button"><b>GTA</b> BUILDING CONSULT</a>
-    <!-- Float links to the right. Hide them on small screens -->
-    <div class="w3-right"> 
-      <a href="projects.html" class="w3-bar-item w3-button">Projects</a>
-      <a href="about.html" class="w3-bar-item w3-button">About</a>
-      <a href="services.html" class="w3-bar-item w3-button">Services</a>
-      <a href="testimonials.html" class="w3-bar-item w3-button">Testimonials</a>
-      <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+      <img class="logo-img" src="images/thompson_logo.jpg">
+      <a href="#home" class="w3-bar-item w3-button"><b>GTA</b> BUILDING CONSULT</a>
+      <div class="w3-right"> 
+        <a href="projects.html" class="w3-bar-item w3-button">Projects</a>
+        <a href="about.html" class="w3-bar-item w3-button">About</a>
+        <a href="services.html" class="w3-bar-item w3-button">Services</a>
+        <a href="testimonials.html" class="w3-bar-item w3-button">Testimonials</a>
+        <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
+        <a href="gallery.html" class="w3-bar-item w3-button">Portfolio</a>
+      </div>
     </div>
-
-
-<!-- Signup Modal -->
-<div id="signupModal" class="w3-modal">
-  <div class="w3-modal-content w3-animate-zoom w3-card-4">
-    <header class="w3-container w3-black"> 
-      <span onclick="document.getElementById('signupModal').style.display='none'" 
-            class="w3-button w3-large w3-display-topright">&times;</span>
-      <h2>Signup</h2>
-    </header>
-    <form class="w3-container" action="signup_process.php" method="POST">
-      <label><b>Full Name</b></label>
-      <input class="w3-input w3-border" type="text" name="fullname" required>
-
-      <label><b>Email</b></label>
-      <input class="w3-input w3-border" type="email" name="email" required>
-
-      <label><b>Password</b></label>
-      <input class="w3-input w3-border" type="password" name="password" required>
-
-      <button class="w3-button w3-black w3-margin-top w3-block">
-        <i class="fa fa-paper-plane"></i> Submit
-      </button>
-    </form>
   </div>
-</div>
 
-<!-- Login Modal -->
-<div id="loginModal" class="w3-modal">
-  <div class="w3-modal-content w3-animate-zoom w3-card-4">
-    <header class="w3-container w3-gray"> 
-      <span onclick="document.getElementById('loginModal').style.display='none'" 
-            class="w3-button w3-large w3-display-topright">&times;</span>
-      <h2>Login</h2>
-    </header>
-    <form class="w3-container" action="login_process.php" method="POST">
-      <label><b>Email</b></label>
-      <input class="w3-input w3-border" type="email" name="email" required>
+  <!-- Header -->
+  <header class="w3-display-container w3-content w3-wide" style="max-width: 1500px;" id="home">
+    <img class="w3-image" src="/images/background2.jpg" alt="Architecture" width="1500" height="800">
+    <div class="w3-display-middle w3-margin-top w3-center">
+      <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>GTA</b></span> <span class="w3-hide-small w3-text-black">BUILDING CONSULT</span></h1>
+    </div>
+  </header>
 
-      <label><b>Password</b></label>
-      <input class="w3-input w3-border" type="password" name="password" required>
+  <!-- Page content -->
+  <div class="w3-content w3-padding" style="max-width:1564px">
 
-      <button class="w3-button w3-gray w3-margin-top w3-block">
-        <i class="fa fa-sign-in"></i> Login
-      </button>
-    </form>
-  </div>
-</div>
+    <section class="about-us">
+      <div class="container">
+        <div class="about-content">
+          <div class="left-side">
+            <h1>About Us</h1>
+            <p>
+              At GTA Building Consult, we are committed to transforming visions into reality. As a leading architecture and construction consulting firm, we specialize in providing expert advice and project management services to clients across a variety of industries. Whether you’re building a dream home, a commercial space, or embarking on a large-scale development, our team of experienced professionals ensures your project is executed flawlessly from start to finish.
+            </p>
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Our Mission</h3>
+            <p>
+              Our mission is to deliver innovative and sustainable building solutions that meet the needs of our clients. We focus on quality, efficiency, and cost-effectiveness, ensuring that every project exceeds expectations while adhering to the highest industry standards. At GTA Building Consult, we believe in building strong relationships with our clients and working collaboratively to bring their ideas to life.
+            </p>
+            <div class="icons">
+              <div class="icon">
+                <i class="fa fa-building w3-text-dark-grey" style="font-size: 40px;"></i>
+                <p>Architecture</p>
+              </div>
+              <div class="icon">
+                <i class="fa fa-cogs w3-text-dark-grey" style="font-size: 40px;"></i>
+                <p>Interiors</p>
+              </div>
+              <div class="icon">
+                <i class="fa fa-map w3-text-dark-grey" style="font-size: 40px;"></i>
+                <p>Planning</p>
+              </div>
+            </div>
+          </div>
+          <div class="right-side">
+            <img src="images/about-header2.jpg" alt="About Us Image" class="about-image">    
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- Modal Handling Script -->
-<script>
-// Close the modal when clicking outside
-window.onclick = function(event) {
-  if (event.target == document.getElementById('signupModal')) {
-    document.getElementById('signupModal').style.display = "none";
-  }
-  if (event.target == document.getElementById('loginModal')) {
-    document.getElementById('loginModal').style.display = "none";
-  }
-}
-</script>
-
+    <div class="w3-row-padding w3-grayscale">
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+        <h3>Gabriel Thompson</h3>
+        <p class="w3-opacity">CEO & Founder</p>
+        <p>Gabriel Thompson is the visionary Founder and CEO of GTA Building Consult, a leading construction and architectural consultancy firm. With several years of experience in the construction and real estate industry, He has built a reputation for excellence, innovation, and strategic leadership.</p>
+        <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
+        <h3>Jane Doe</h3>
+        <p class="w3-opacity">Architect</p>
+        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+      </div>
+    </div>
     
-  </div>
-</div>
-
-
-<!-- Header -->
-<header class="w3-display-container w3-content w3-wide" style="max-width: 1500px;" id="home">
-  <img class="w3-image" src="/images/hero-bg.jpg" alt="Architecture" width="1500" height="800">
-  <div class="w3-display-middle w3-margin-top w3-center">
-    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>GTA</b></span> <span class="w3-hide-small w3-text-black">BUILDING CONSULT</span></h1>
-  </div>
-</header>
-
-<!-- Page content -->
-<div class="w3-content w3-padding" style="max-width:1564px">
-
-<!-- About Section -->
-<div class="w3-container w3-padding-32" id="about">
-  <h1 class="w3-xxlarge w3-text-black"><b>About Us</b></h1>
-  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Who We Are</h3>
-  <p>
-    At GTA Building Consult, we are committed to transforming visions into reality. As a leading architecture and construction consulting firm, we specialize in providing expert advice and project management services to clients across a variety of industries. Whether you’re building a dream home, a commercial space, or embarking on a large-scale development, our team of experienced professionals ensures your project is executed flawlessly from start to finish.
-  </p>
-  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Our Mission</h3>
-  <p>
-    Our mission is to deliver innovative and sustainable building solutions that meet the needs of our clients. We focus on quality, efficiency, and cost-effectiveness, ensuring that every project exceeds expectations while adhering to the highest industry standards. At GTA Building Consult, we believe in building strong relationships with our clients and working collaboratively to bring their ideas to life.
-  </p>
-  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Our Values</h3>
-  <p>
-Integrity, excellence, and commitment are the core values that define GTA Building Consult. We pride ourselves on our attention to detail, transparency in communication, and dedication to customer satisfaction. We approach each project with passion and purpose, ensuring that every phase of the build is executed with precision and care.
-  </p>
-  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Our Team</h3>
-  <p>
-    Our team consists of highly skilled architects, project managers, and construction experts who bring years of experience and knowledge to every project. We are passionate about creating spaces that inspire, and we take pride in providing custom solutions that are tailored to your specific needs. Our collaborative approach ensures that every project is a success.
-  </p>
-</div>
-
-<div class="w3-row-padding w3-grayscale">
-  <div class="w3-col l3 m6 w3-margin-bottom">
-    <img src="/w3images/team2.jpg" alt="John" style="width:100%">
-    <h3>Gabriel Thompson</h3>
-    <p class="w3-opacity">CEO & Founder</p>
-    <p>Gabriel Thompson is the visionary Founder and CEO of GTA Building Consult, a leading construction and architectural consultancy firm. With several years of experience in the construction and real estate industry, He has built a reputation for excellence, innovation, and strategic leadership.</p>
-    <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
-  </div>
-  <div class="w3-col l3 m6 w3-margin-bottom">
-    <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
-    <h3>Jane Doe</h3>
-    <p class="w3-opacity">Architect</p>
-    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-    <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
-  </div>
-</div>
-
-
-
-  <!-- Project Section -->
-  <div class="w3-container w3-padding-32" id="projects">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Projects</h3>
-  </div>
-
-  <div class="w3-row-padding">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Summer House</div>
-        <img src="images/" alt="House" style="width:100%">
+    
+    
+      <!-- Project Section -->
+      <div class="w3-container w3-padding-32" id="projects">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Projects</h3>
       </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Brick House</div>
-        <img src="images/house2.jpg" alt="House" style="width:100%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Renovated</div>
-        <img src="/w3images/house3.jpg" alt="House" style="width:100%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Barn House</div>
-        <img src="/w3images/house4.jpg" alt="House" style="width:100%">
-      </div>
-    </div>
-  </div>
-
-  <div class="w3-row-padding">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Summer House</div>
-        <img src="images/" alt="House" style="width:99%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Brick House</div>
-        <img src="images/house2.jpg" alt="House" style="width:99%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Renovated</div>
-        <img src="/w3images/house4.jpg" alt="House" style="width:99%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Barn House</div>
-        <img src="/w3images/house3.jpg" alt="House" style="width:99%">
-      </div>
-    </div>
-  </div>
-
-  <!-- Services Section -->
-  <div class="w3-content" style="max-width:1564px">
-    <h1 class="w3-xxlarge center-text"><b>Our Services</b></h1>
-    <h2 class="w3-xxlarge w3-border-bottom w3-border-light-grey w3-padding-16 center-text">What We Offer:</h2>
-  
-    <div class="services-container">
-      <div class="service-card">
-        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Building Plans</h3>
-        <p>
-          We provide professional architectural design services that help bring your vision to life. Our team creates detailed, functional, and aesthetically pleasing building plans tailored to your specific needs, ensuring that each design maximizes space, functionality, and compliance with local building codes.</p>
-        <img src="/images/building_plan.jpg" alt="Drawing of Building Plans">
-        <div class="service-info">
-          <h4>Drawing of Building Plans</h4>
+    
+      <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Summer House</div>
+            <img src="images/" alt="House" style="width:100%">
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Brick House</div>
+            <img src="images/house2.jpg" alt="House" style="width:100%">
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Renovated</div>
+            <img src="/w3images/house3.jpg" alt="House" style="width:100%">
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Barn House</div>
+            <img src="/w3images/house4.jpg" alt="House" style="width:100%">
+          </div>
         </div>
       </div>
-  
-      <div class="service-card">
-        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Land Survey</h3>
-        <p>Our expert surveyors provide precise land surveying services to help determine boundaries, elevations, and site conditions. Accurate surveys are essential for effective planning and project execution, and we ensure that every measurement is precise and up to standard.</p>
-        <img src="/images/land_survey.jpg" alt="Land Survey">
-        <div class="service-info">
-          <h4>Land Survey</h4>
+    
+      <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Summer House</div>
+            <img src="images/" alt="House" style="width:99%">
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Brick House</div>
+            <img src="images/house2.jpg" alt="House" style="width:99%">
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Renovated</div>
+            <img src="/w3images/house4.jpg" alt="House" style="width:99%">
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">Barn House</div>
+            <img src="/w3images/house3.jpg" alt="House" style="width:99%">
+          </div>
         </div>
       </div>
-
-  <div class="service-card">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Building Permits</h3>
-    <p>Navigating the complexities of local building regulations and obtaining permits can be a challenge. We handle the entire process of acquiring the necessary building permits for your project, ensuring compliance with all legal requirements, and saving you time and effort.</p>
-    <img src="/images/building_permit.jpg" alt="Building Permit Acquisition">
-    <div class="service-info">
-      <h4>Building Permit Acquisition</h4>
+    
+      <!-- Services Section -->
+      <div class="w3-content" style="max-width:1564px">
+        <h1 class="w3-xxlarge center-text"><b>Our Services</b></h1>
+        <h2 class="w3-xxlarge w3-border-bottom w3-border-light-grey w3-padding-16 center-text">What We Offer:</h2>
+      
+        <div class="services-container">
+          <div class="service-card">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Building Plans</h3>
+            <p>
+              We provide professional architectural design services that help bring your vision to life. Our team creates detailed, functional, and aesthetically pleasing building plans tailored to your specific needs, ensuring that each design maximizes space, functionality, and compliance with local building codes.</p>
+            <img src="/images/building_plan.jpg" alt="Drawing of Building Plans">
+            <div class="service-info">
+              <h4>Drawing of Building Plans</h4>
+            </div>
+          </div>
+      
+          <div class="service-card">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Land Survey</h3>
+            <p>Our expert surveyors provide precise land surveying services to help determine boundaries, elevations, and site conditions. Accurate surveys are essential for effective planning and project execution, and we ensure that every measurement is precise and up to standard.</p>
+            <img src="/images/land_survey.jpg" alt="Land Survey">
+            <div class="service-info">
+              <h4>Land Survey</h4>
+            </div>
+          </div>
+    
+      <div class="service-card">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Building Permits</h3>
+        <p>Navigating the complexities of local building regulations and obtaining permits can be a challenge. We handle the entire process of acquiring the necessary building permits for your project, ensuring compliance with all legal requirements, and saving you time and effort.</p>
+        <img src="/images/building_permit.jpg" alt="Building Permit Acquisition">
+        <div class="service-info">
+          <h4>Building Permit Acquisition</h4>
+        </div>
+      </div>
+      </div>
+      </div>
+      
+    
+      <!-- Contact Section -->
+      <div class="w3-container w3-padding-32" id="contact">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact Us</h3>
+        <p>Lets get in touch and talk about your next project.</p>
+            <a href="contact.html">
+              <button class="w3-button w3-black w3-margin-bottom" type="submit">
+                <i class="fa fa-paper-plane"></i> Send Us A Message </button>
+      </div>
+      
+    <!-- Image of location/map -->
+    <div class="w3-container">
+      <img src="/w3images/map.jpg" class="w3-image" style="width:100%">
     </div>
-  </div>
-  </div>
-  </div>
-  
-
-  <!-- Contact Section -->
-  <div class="w3-container w3-padding-32" id="contact">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact Us</h3>
-    <p>Lets get in touch and talk about your next project.</p>
-        <a href="contact.html">
-          <button class="w3-button w3-black w3-margin-bottom" type="submit">
-            <i class="fa fa-paper-plane"></i> Send Us A Message </button>
-  </div>
-  
-<!-- Image of location/map -->
-<div class="w3-container">
-  <img src="/w3images/map.jpg" class="w3-image" style="width:100%">
-</div>
-<a href="#home" class="w3-button w3-black w3-margin-top fa fa-home">Back to Top</a>
-
-<!-- End page content -->
-</div>
-
-<!-- Footer -->
+    <a href="#home" class="w3-button w3-black w3-margin-top fa fa-arrow-up">Back to Top</a>
+    
+    <!-- End page content -->
+    </div>
+    
+  <!-- Footer -->
 <footer class="footer">
   <div class="w3-row-padding">
     <div class="w3-col l6 m6 s12">
-      <a href="signup.html" onclick="document.getElementById('signupModal').style.display='block'" class="w3-bar-item w3-button">
-        <i class="fa fa-user-plus"></i> Signup
-      </a>
-      <a href="login.html" onclick="document.getElementById('loginModal').style.display='block'" class="w3-bar-item w3-button">
-        <i class="fa fa-sign-in"></i> Login
-      </a>
+      
       <h4>Contact Details</h4>
       <p><i class="fa fa-map-marker w3-text-red"></i> 123 Main Street, Cityville</p>
       <p><i class="fa fa-phone w3-text-red"></i> +233(0) 547 544 483</p>
@@ -355,6 +320,12 @@ Integrity, excellence, and commitment are the core values that define GTA Buildi
       <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
       <p>Saturday: By Appointment</p>
       <p>Sunday: Closed</p>
+      <a href="signup.html" onclick="document.getElementById('signupModal').style.display='block'" class="w3-bar-item w3-button">
+        <i class="fa fa-user-plus"></i> Signup
+      </a>
+      <a href="login.html" onclick="document.getElementById('loginModal').style.display='block'" class="w3-bar-item w3-button">
+        <i class="fa fa-sign-in"></i> Login
+      </a>
     </div>
     <div class="w3-col l6 m6 s12">
       <h4>Follow Us on Social Media:</h4>
@@ -370,7 +341,7 @@ Integrity, excellence, and commitment are the core values that define GTA Buildi
         </a>
       </div>
       
-    </div>~
+    </div>
   </div>
   <p class="w3-border-bottom w3-border-light-grey w3-padding-16"></p>
   <p>&copy; 2024 GTA BUILDING CONSULT</p>
@@ -378,10 +349,3 @@ Integrity, excellence, and commitment are the core values that define GTA Buildi
 
 </body>
 </html>
-
-<!-- Add Font Awesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-</body>
-</html>             

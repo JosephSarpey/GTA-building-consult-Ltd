@@ -200,6 +200,18 @@ body {
       width: 100%;
     }
   }
+
+  .w3-button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .w3-button:hover {
+    background-color: #555;
+    color: white;
+  }
+  
   
   /* Adjusting form elements for smaller screens */
   @media only screen and (max-width: 600px) {
@@ -208,4 +220,120 @@ body {
       margin-bottom: 10px;
     }
   }
+  
+  .about-us {
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+
+  
+  .years-info {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .years {
+    font-size: 5rem;
+    font-weight: 900;
+    color: #ff7b00;
+  }
+  
+  .years-text {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .icons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  .icon {
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .icon:hover {
+    transform: translateY(-10px);
+  }
+  
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Equal sizes for both sides */
+    align-items: center;
+    gap: 40px; /* Space between left and right sides */
+  }
+  
+  .left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .right-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensures it fills its grid cell */
+    height: 100%; /* Matches the height of the left side */
+    position: relative;
+  }
+  
+  .about-image {
+    width: 100%; /* Fills the grid container */
+    max-width: 500px; /* Optional: Limits the maximum size of the image */
+    aspect-ratio: 1; /* Ensures the image is perfectly square */
+    object-fit: cover; /* Ensures the image scales without distortion */
+    border-radius: 50%; /* Creates a circular image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 0px solid #555; /* Optional: Adds a border around the image */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Adds a shadow for aesthetics */
+  }
+  
+  .about-image:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    @media screen and (max-width: 768px) {
+      .about-content {
+        grid-template-columns: 1fr; /* Stacks the left and right sides vertically */
+        gap: 20px;
+      }
+    
+      .right-side {
+        justify-content: center;
+        align-items: center;
+      }
+    
+      .about-image {
+        width: 80%; /* Shrinks the image to fit smaller screens */
+        max-width: 300px; /* Optional: Sets a max size for the image */
+        aspect-ratio: 1; /* Ensures the image remains circular */
+        border-radius: 50%;
+      }
+    }
+    
+    .about-image:hover {
+      transform: scale(1.05); /* Slight zoom on hover */
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    }
+  }
+  
   
